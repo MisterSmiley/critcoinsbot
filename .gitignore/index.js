@@ -7,10 +7,9 @@ var mention = "<@402192459549114378>";
 var memberCount = client.users.size;
 var servercount = client.guilds.size;
 
-client.on("ready", () => {
-	var servers = client.guilds.array().map(g => g.name).join(',');
-	console.log("--------------------------------------");
-console.log('[!]Connexion en cours... \n[!]Veuillez Patienté! \n[!]Les évenement sont après ! :)  \n[!]Les préfix actuelle:  ' + prefix + "\n[!]Mentions = " + mention + "\n[!]Nombre de membres: " + memberCount + "\n[!]Nombre de serveurs: " + servercount);
+client.on("ready", function() {
+    bot.user.setGame("c!help | critcoins.tk")
+    
 });
 
 client.on('message', message => {
