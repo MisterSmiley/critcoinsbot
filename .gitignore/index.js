@@ -1,17 +1,20 @@
-const discord = require("discord.js");
+const Discord = require('discord.js');
+const client = new Discord.Client();
 
-var bot = new Discord.Client();
-
-bot.on("ready", function(){
-    bot.user.setGame("c!help | CoinsBot");
-
-});
-
-bot.on('message', function(message) {
-    if (message.content === 'c!ping') {
-      message.reply('Pong !')
-    console.log("Le Bot est connecté")
-
+bot.on('ready', function() {
+    bot.user.setAvatar('./coin-icon.png').catch(console.error)
+    bot.user.setGame(c!help | critcoins.tk).catch(console.error)
 })
 
-bot.login("NDAyMTkyNDU5NTQ5MTE0Mzc4.DT1SmQ.g7ffYVv48FCuqPpFgB7uJqAMtpA");
+bot.on('guildMembersAdd', function(member) {
+  member.createDM().then(function (channel) {
+      return channel.send('Bienvenue sur le Discord Officiel de CritCoins ' + member.displayName)
+  }).catch(console.error)
+})
+
+bot.on('message', function(message) {
+    if (message.content === ('c!ping')
+      message.channel.send('pong')
+})
+
+client.login(NDAyMTkyNDU5NTQ5MTE0Mzc4.DT1SmQ.g7ffYVv48FCuqPpFgB7uJqAMtpA);
