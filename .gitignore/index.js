@@ -1,18 +1,12 @@
-const Discord = require("discord.js");
-const client = new Discord.Client();
+const discord require = ("discord.js");
 
-const token = "NDAyMTkyNDU5NTQ5MTE0Mzc4.DT1SmQ.g7ffYVv48FCuqPpFgB7uJqAMtpA";
-var prefix = "c!";
-var mention = "<@402192459549114378>";
-var memberCount = client.users.size;
-var servercount = client.guilds.size;
+var bot = new Discord.Client();
 
-client.on("ready", function() {
-    bot.user.setGame("c!help | critcoins.tk")
-    
-});
-
-client.on('message', message => {
+bot.on("ready", function(){
+    bot.user.setGame("c!help | CoinsBot");
+    console.log("Le Bot est connecté")
+	
+bot.on('message', message => {
 	if (message.content === ("c!ping")){
 	message.reply('pong !');
 } else if (message.content === ("bvn")){
@@ -28,4 +22,6 @@ client.on('message', message => {
 }
 });
 
-client.login(NDAyMTkyNDU5NTQ5MTE0Mzc4.DT1SmQ.g7ffYVv48FCuqPpFgB7uJqAMtpA)
+});
+
+bot.login("NDAyMTkyNDU5NTQ5MTE0Mzc4.DT1KcQ.atV3-7qA5bX5hJQtM_ogNlK6ehs");
