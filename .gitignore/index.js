@@ -1,20 +1,32 @@
-const Discord = require('discord.js');
+const Discord = require("discord.js");
 const client = new Discord.Client();
 
-bot.on('ready', function() {
-    bot.user.setAvatar('./coin-icon.png').catch(console.error)
-    bot.user.setGame(c!help | critcoins.tk).catch(console.error)
-})
+const token = "NDAyMTkyNDU5NTQ5MTE0Mzc4.DT1SmQ.g7ffYVv48FCuqPpFgB7uJqAMtpA";
+var prefix = "c!";
+var mention = "<@402192459549114378>";
+var memberCount = client.users.size;
+var servercount = client.guilds.size;
 
-bot.on('guildMembersAdd', function(member) {
-  member.createDM().then(function (channel) {
-      return channel.send('Bienvenue sur le Discord Officiel de CritCoins ' + member.displayName)
-  }).catch(console.error)
-})
+client.on("ready", () => {
+	var servers = client.guilds.array().map(g => g.name).join(',');
+	console.log("--------------------------------------");
+console.log('[!]Connexion en cours... \n[!]Veuillez Patienté! \n[!]Les évenement sont après ! :)  \n[!]Les préfix actuelle:  ' + prefix + "\n[!]Mentions = " + mention + "\n[!]Nombre de membres: " + memberCount + "\n[!]Nombre de serveurs: " + servercount);
+});
 
-bot.on('message', function(message) {
-    if (message.content === ('c!ping')
-      message.channel.send('pong')
-})
+client.on('message', message => {
+	if (message.content === ("c!ping")){
+	message.reply('pong !');
+} else if (message.content === ("bvn")){
+	message.reply('Bienvenue petit nouveau :wink:');
+} else if(message.content.startsWith('!botname')){
+	client.user.setUsername(message.content.substr(9));
+} else if (message.content === "!stats") {
+	let m = " ";
+	m += 'Il y a actuellement  ${message.guild.channels.size} channels sur ce serveurs \n';
+	m += 'je suis en compagnie de ${message.guild.members.size} membres';
+	m += 'je suis présent dans ${client.guild.size} serveurs \n';
+	message.author.sendMessage(m).catch(console.log); 
+}
+});
 
-client.login(NDAyMTkyNDU5NTQ5MTE0Mzc4.DT1SmQ.g7ffYVv48FCuqPpFgB7uJqAMtpA);
+client.login(NDAyMTkyNDU5NTQ5MTE0Mzc4.DT1SmQ.g7ffYVv48FCuqPpFgB7uJqAMtpA)
