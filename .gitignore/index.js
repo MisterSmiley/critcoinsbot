@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 var bot = new Discord.Client();
 
 bot.on("ready", function(){
-    bot.user.setGame("c!help | CoinsBot");
+    bot.user.setGame("c!help | CritCoinsBot");
     console.log("Le Bot est connecté")
 
 });
