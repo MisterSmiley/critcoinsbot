@@ -3,7 +3,9 @@ const Discord = require("discord.js");
 var bot = new Discord.Client();
 
 bot.on("ready", function(){
-    bot.user.setGame("c!help | CritCoinsBot");
+    bot.user.setGame("c!help | CritCoinsBot")
+    if (message.content === 'c!ping')
+      message.reply('Pong !')
     console.log("Le Bot est connecté")
 
 });
