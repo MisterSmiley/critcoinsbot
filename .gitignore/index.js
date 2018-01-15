@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const token = 'NDAyMTkyNDU5NTQ5MTE0Mzc4.DT1SmQ.g7ffYVv48FCuqPpFgB7uJqAMtpA';
 
 client.on('ready', () => {
   console.log('je suis prêt!');
@@ -24,4 +23,4 @@ client.on('message', message => {
     message.channel.send('pong').then(sent => {
     sent.edit("Votre ping est à **"+`${sent.createdTimestamp - message.createdTimestamp}`+"** ms");
 });
-client.login(NDAyMTkyNDU5NTQ5MTE0Mzc4.DT1SmQ.g7ffYVv48FCuqPpFgB7uJqAMtpA)
+client.login(process.env.TOKEN)
