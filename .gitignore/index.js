@@ -23,4 +23,4 @@ client.on('message', message => {
     message.channel.send('pong').then(sent => {
     sent.edit("Votre ping est à **"+`${sent.createdTimestamp - message.createdTimestamp}`+"** ms");
 });
-client.login(TOKEN)
+client.login(process.env.TOKEN)
