@@ -4,3 +4,5 @@ const bot = new Discord.Client();
 bot.on("ready", ready => {
     bot.user.setGame("dev le SmileyBot")
 });
+
+bot.login(process.env.TOKEN);
